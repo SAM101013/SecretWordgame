@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amita:wght@700&family=Fondamento&family=Inter:wght@100;200&family=Julius+Sans+One&family=Noto+Sans+Cypro+Minoan&family=Orbitron&family=Wix+Madefor+Text:wght@600&display=swap" rel="stylesheet">
+
+
+<head>
+<title>Guessing Game</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Guess the secret word</h1>
+<p>You have 14 chances.</p>
+<input type="text" id="guess" placeholder="Enter your guess">
+<button onclick="checkGuess()">Check Guess</button>
+<div class="container">
+  <img src="Eyebreathe.gif" alt="a single eye above the horizon">
+</div>
+<p id="result"></p>
+</body>
+<script>
+var guessCount = 0;
+  function checkGuess() {
+  var guess = document.getElementById("guess").value;
+  var secretword = "hermes";
+  if (guess === secretword) {
+    document.getElementById("result").innerHTML = "<img src='guessright1.png' alt='an ey above the horizon'> " + "<img src='guessright2.png' alt='line8/14'> " + "<img src='emeraldtab.png' alt='emerald tablet of hermes'>"+ "You guessed right!";
+    // document.getElementById("container").innerHTML = "12.png";
+  
+   } else {
+    guessCount++;
+    if (guessCount === 14) {
+      document.getElementById("result").innerHTML = "You ran out of chances!";
+    } else {
+      document.getElementById("result").innerHTML = "Wrong guess.";
+    }
+  }
+}
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
